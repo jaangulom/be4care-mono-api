@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        caption="msg://tipoLaboratorioEdit.caption"
+        focusComponent="form">
+    <data>
+        <instance id="antecedenteDc"
+                  class="com.be4tech.b4caremonoapi.entity.Antecedente">
+            <fetchPlan extends="_base">
+                <property name="historiaClinica"/>
+                <property name="paciente"/>
+                <property name="user"/>
+            </fetchPlan>
+            <loader/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="windowCommitAndClose" caption="msg:///actions.Ok"
+                icon="EDITOR_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="windowClose"
+                caption="msg:///actions.Close"
+                icon="EDITOR_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true" expand="scrollBox">
+        <scrollBox id="scrollBox" spacing="true">
+            <form id="form" dataContainer="antecedenteDc">
+                <column width="350px">
+                    <textField id="alergicosField" property="alergicos"/>
+                    <textArea id="edadAFamiliarField" property="edadAFamiliar" rows="5"/>
+                    <textField id="empresaField" property="empresa"/>
+                    <textArea id="familiaresField" property="familiares" rows="5"/>
+                    <entityPicker id="historiaClinicaField" property="historiaClinica">
+                        <actions>
+                            <action id="entityLookup" type="entity_lookup"/>
+                            <action id="entityClear" type="entity_clear"/>
+                        </actions>
+                    </entityPicker>
+                    <textField id="medicamentosField" property="medicamentos"/>
+                    <textField id="neuroDesarrolloField" property="neuroDesarrollo"/>
+                    <textArea id="nombreField" property="nombre" rows="5"/>
+                    <textArea id="observacionField" property="observacion" rows="5"/>
+                    <entityPicker id="pacienteField" property="paciente">
+                        <actions>
+                            <action id="entityLookup" type="entity_lookup"/>
+                            <action id="entityClear" type="entity_clear"/>
+                        </actions>
+                    </entityPicker>
+                    <textArea id="parentescoField" property="parentesco" rows="5"/>
+                    <textField id="patologicosField" property="patologicos"/>
+                    <textField id="quirurgicosField" property="quirurgicos"/>
+                    <textArea id="tipoAntecedenteField" property="tipoAntecedente" rows="5"/>
+                    <textField id="toxicosField" property="toxicos"/>
+                    <entityPicker id="userField" property="user">
+                        <actions>
+                            <action id="entityLookup" type="entity_lookup"/>
+                            <action id="entityClear" type="entity_clear"/>
+                        </actions>
+                    </entityPicker>
+                </column>
+            </form>
+        </scrollBox>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

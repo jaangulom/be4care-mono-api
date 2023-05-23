@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        xmlns:c="http://jmix.io/schema/ui/jpql-condition"
+        caption="msg://tipoLaboratorioBrowse.caption"
+        focusComponent="pesoesTable">
+    <data readOnly="true">
+        <collection id="pesoesDc"
+                    class="com.be4tech.b4caremonoapi.entity.Peso">
+            <fetchPlan extends="_base">
+                <property name="user"/>
+            </fetchPlan>
+            <loader id="pesoesDl">
+                <query>
+                    <![CDATA[select e from Peso e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="lookupSelectAction"
+                caption="msg:///actions.Select"
+                icon="LOOKUP_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="lookupCancelAction"
+                caption="msg:///actions.Cancel"
+                icon="LOOKUP_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="pesoesTable" spacing="true">
+        <filter id="filter"
+                dataLoader="pesoesDl">
+            <properties include=".*"/>
+        </filter>
+        <table id="pesoesTable"
+               width="100%"
+               dataContainer="pesoesDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="descripcion"/>
+                <column id="empresa"/>
+                <column id="fechaRegistro"/>
+                <column id="pesoKg"/>
+                <column id="user"/>
+            </columns>
+            <simplePagination/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="pesoesTable.create"/>
+                <button id="editBtn" action="pesoesTable.edit"/>
+                <button id="removeBtn" action="pesoesTable.remove"/>
+            </buttonsPanel>
+        </table>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

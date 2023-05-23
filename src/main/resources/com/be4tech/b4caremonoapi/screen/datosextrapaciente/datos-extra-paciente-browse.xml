@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        xmlns:c="http://jmix.io/schema/ui/jpql-condition"
+        caption="msg://tipoLaboratorioBrowse.caption"
+        focusComponent="datosExtraPacientesTable">
+    <data readOnly="true">
+        <collection id="datosExtraPacientesDc"
+                    class="com.be4tech.b4caremonoapi.entity.DatosExtraPaciente">
+            <fetchPlan extends="_base">
+                <property name="paciente"/>
+            </fetchPlan>
+            <loader id="datosExtraPacientesDl">
+                <query>
+                    <![CDATA[select e from DatosExtraPaciente e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="lookupSelectAction"
+                caption="msg:///actions.Select"
+                icon="LOOKUP_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="lookupCancelAction"
+                caption="msg:///actions.Cancel"
+                icon="LOOKUP_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="datosExtraPacientesTable" spacing="true">
+        <filter id="filter"
+                dataLoader="datosExtraPacientesDl">
+            <properties include=".*"/>
+        </filter>
+        <table id="datosExtraPacientesTable"
+               width="100%"
+               dataContainer="datosExtraPacientesDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="comentDespDisp"/>
+                <column id="comorbilidades"/>
+                <column id="crisisAntesDisp"/>
+                <column id="crisisDespDisp"/>
+                <column id="descripcion"/>
+                <column id="descripcion1"/>
+                <column id="descripcion2"/>
+                <column id="descripcion3"/>
+                <column id="descripcion4"/>
+                <column id="descripcion5"/>
+                <column id="descripcion6"/>
+                <column id="descripcion7"/>
+                <column id="descripcion8"/>
+                <column id="descripcion9"/>
+                <column id="diagnostico"/>
+                <column id="dieta"/>
+                <column id="efectosSegundDisp"/>
+                <column id="empresa"/>
+                <column id="escolaridad"/>
+                <column id="estadoCivil"/>
+                <column id="estadoLaboral"/>
+                <column id="estatusAntesDips"/>
+                <column id="estatusDespDisp"/>
+                <column id="fase"/>
+                <column id="fechaActualizacion"/>
+                <column id="fechaCrisis"/>
+                <column id="fechaImplantacionDisp"/>
+                <column id="fechaInicio"/>
+                <column id="grupoPoblacional"/>
+                <column id="identidadGenero"/>
+                <column id="ipsPaciente"/>
+                <column id="lateralidad"/>
+                <column id="modeloDisp"/>
+                <column id="paciente"/>
+                <column id="profesion"/>
+                <column id="raza"/>
+                <column id="religion"/>
+                <column id="revisionSistemas"/>
+                <column id="tipoFamilia"/>
+            </columns>
+            <simplePagination/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="datosExtraPacientesTable.create"/>
+                <button id="editBtn" action="datosExtraPacientesTable.edit"/>
+                <button id="removeBtn" action="datosExtraPacientesTable.remove"/>
+            </buttonsPanel>
+        </table>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

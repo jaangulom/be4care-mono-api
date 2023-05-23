@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        caption="msg://tipoLaboratorioEdit.caption"
+        focusComponent="form">
+    <data>
+        <instance id="segimientoDispDc"
+                  class="com.be4tech.b4caremonoapi.entity.SegimientoDisp">
+            <fetchPlan extends="_base">
+                <property name="dispositivo" fetchPlan="_instance_name"/>
+            </fetchPlan>
+            <loader/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="windowCommitAndClose" caption="msg:///actions.Ok"
+                icon="EDITOR_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="windowClose"
+                caption="msg:///actions.Close"
+                icon="EDITOR_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true" expand="scrollBox">
+        <scrollBox id="scrollBox" spacing="true">
+            <form id="form" dataContainer="segimientoDispDc">
+                <column width="350px">
+                    <textArea id="anchoPulsoAuField" property="anchoPulsoAu" rows="5"/>
+                    <textField id="anchoPulsoImanField" property="anchoPulsoIman"/>
+                    <textField id="anchoPulsoNorField" property="anchoPulsoNor"/>
+                    <textArea id="bateriaGeneradorField" property="bateriaGenerador" rows="5"/>
+                    <textArea id="cicloTrabajoField" property="cicloTrabajo" rows="5"/>
+                    <textArea id="corrienteSalidaAuField" property="corrienteSalidaAu" rows="5"/>
+                    <textField id="corrienteSalidaImanField" property="corrienteSalidaIman"/>
+                    <textField id="corrienteSalidaNorField" property="corrienteSalidaNor"/>
+                    <entityPicker id="dispositivoField" property="dispositivo">
+                        <actions>
+                            <action id="entityLookup" type="entity_lookup"/>
+                            <action id="entityClear" type="entity_clear"/>
+                        </actions>
+                    </entityPicker>
+                    <textField id="empresaField" property="empresa"/>
+                    <dateField id="fechaCreacionField" property="fechaCreacion"/>
+                    <dateField id="fechaImplantacionField" property="fechaImplantacion"/>
+                    <dateField id="fechaProgramacionField" property="fechaProgramacion"/>
+                    <textField id="idEncargadoField" property="idEncargado"/>
+                    <textField id="impedanciaKohmsField" property="impedanciaKohms"/>
+                    <textField id="modeloGeneradorField" property="modeloGenerador"/>
+                    <textField id="senalFrecuenciaField" property="senalFrecuencia"/>
+                    <textArea id="senalFrecuenciaAuField" property="senalFrecuenciaAu" rows="5"/>
+                    <textArea id="serialGeneradorField" property="serialGenerador" rows="5"/>
+                    <textArea id="timeOffAutostimField" property="timeOffAutostim" rows="5"/>
+                    <textField id="timeOffNormField" property="timeOffNorm"/>
+                    <textArea id="timeOnAutostimField" property="timeOnAutostim" rows="5"/>
+                    <textField id="timeOnImanField" property="timeOnIman"/>
+                    <textField id="timeOnNormField" property="timeOnNorm"/>
+                </column>
+            </form>
+        </scrollBox>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

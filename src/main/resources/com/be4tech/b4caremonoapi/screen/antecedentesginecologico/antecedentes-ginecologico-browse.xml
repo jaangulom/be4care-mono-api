@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        xmlns:c="http://jmix.io/schema/ui/jpql-condition"
+        caption="msg://tipoLaboratorioBrowse.caption"
+        focusComponent="antecedentesGinecologicoesTable">
+    <data readOnly="true">
+        <collection id="antecedentesGinecologicoesDc"
+                    class="com.be4tech.b4caremonoapi.entity.AntecedentesGinecologico">
+            <fetchPlan extends="_base">
+                <property name="historiaClinica"/>
+                <property name="paciente"/>
+            </fetchPlan>
+            <loader id="antecedentesGinecologicoesDl">
+                <query>
+                    <![CDATA[select e from AntecedentesGinecologico e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="lookupSelectAction"
+                caption="msg:///actions.Select"
+                icon="LOOKUP_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="lookupCancelAction"
+                caption="msg:///actions.Cancel"
+                icon="LOOKUP_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="antecedentesGinecologicoesTable" spacing="true">
+        <filter id="filter"
+                dataLoader="antecedentesGinecologicoesDl">
+            <properties include=".*"/>
+        </filter>
+        <table id="antecedentesGinecologicoesTable"
+               width="100%"
+               dataContainer="antecedentesGinecologicoesDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="cicloMestrual"/>
+                <column id="duracion"/>
+                <column id="embarazo"/>
+                <column id="embarazosPrevios"/>
+                <column id="empresa"/>
+                <column id="fUm"/>
+                <column id="frecuencia"/>
+                <column id="historiaClinica"/>
+                <column id="menarca"/>
+                <column id="menopausia"/>
+                <column id="observacion"/>
+                <column id="observacionesGinecob"/>
+                <column id="paciente"/>
+                <column id="planifica"/>
+                <column id="resultadoMamo"/>
+                <column id="timeInstant"/>
+                <column id="ultimaMamografia"/>
+                <column id="updateIntant"/>
+            </columns>
+            <simplePagination/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="antecedentesGinecologicoesTable.create"/>
+                <button id="editBtn" action="antecedentesGinecologicoesTable.edit"/>
+                <button id="removeBtn" action="antecedentesGinecologicoesTable.remove"/>
+            </buttonsPanel>
+        </table>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>
