@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        xmlns:c="http://jmix.io/schema/ui/jpql-condition"
+        caption="msg://tipoLaboratorioBrowse.caption"
+        focusComponent="pacientesTable">
+    <data readOnly="true">
+        <collection id="pacientesDc"
+                    class="com.be4tech.b4caremonoapi.entity.Paciente">
+            <fetchPlan extends="_base">
+                <property name="condicion" fetchPlan="_instance_name"/>
+                <property name="grupo" fetchPlan="_instance_name"/>
+                <property name="tratamiento" fetchPlan="_instance_name"/>
+                <property name="user"/>
+            </fetchPlan>
+            <loader id="pacientesDl">
+                <query>
+                    <![CDATA[select e from Paciente e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="lookupSelectAction"
+                caption="msg:///actions.Select"
+                icon="LOOKUP_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="lookupCancelAction"
+                caption="msg:///actions.Cancel"
+                icon="LOOKUP_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="pacientesTable" spacing="true">
+        <filter id="filter"
+                dataLoader="pacientesDl">
+            <properties include=".*"/>
+        </filter>
+        <table id="pacientesTable"
+               width="100%"
+               dataContainer="pacientesDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="caloriasReferencia"/>
+                <column id="comentarios"/>
+                <column id="condicion"/>
+                <column id="direccion"/>
+                <column id="edad"/>
+                <column id="empresa"/>
+                <column id="estaturaCm"/>
+                <column id="grupo"/>
+                <column id="idRol"/>
+                <column id="identificacion"/>
+                <column id="nombre"/>
+                <column id="pasosReferencia"/>
+                <column id="pesoKg"/>
+                <column id="sexo"/>
+                <column id="telefono"/>
+                <column id="tipoIdentificacion"/>
+                <column id="tratamiento"/>
+                <column id="user"/>
+            </columns>
+            <simplePagination/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="pacientesTable.create"/>
+                <button id="editBtn" action="pacientesTable.edit"/>
+                <button id="removeBtn" action="pacientesTable.remove"/>
+            </buttonsPanel>
+        </table>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

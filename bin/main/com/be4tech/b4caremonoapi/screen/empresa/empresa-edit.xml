@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        caption="msg://tipoLaboratorioEdit.caption"
+        focusComponent="form">
+    <data>
+        <instance id="empresaDc"
+                  class="com.be4tech.b4caremonoapi.entity.Empresa">
+            <fetchPlan extends="_base"/>
+            <loader/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="windowCommitAndClose" caption="msg:///actions.Ok"
+                icon="EDITOR_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="windowClose"
+                caption="msg:///actions.Close"
+                icon="EDITOR_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true" expand="scrollBox">
+        <scrollBox id="scrollBox" spacing="true">
+            <form id="form" dataContainer="empresaDc">
+                <column width="350px">
+                    <textField id="colorPrimarioField" property="colorPrimario"/>
+                    <textField id="colorSecundarioField" property="colorSecundario"/>
+                    <textField id="correoElectronicoField" property="correoElectronico"/>
+                    <textField id="direccionField" property="direccion"/>
+                    <textField id="empresaField" property="empresa"/>
+                    <textArea id="estandarField" property="estandar" rows="5"/>
+                    <fileUpload id="iconoField" property="icono"/>
+                    <textField id="iconoContentTypeField" property="iconoContentType"/>
+                    <textField id="nitField" property="nit"/>
+                    <textField id="nombreField" property="nombre"/>
+                    <textArea id="politicaEmpresaField" property="politicaEmpresa" rows="5"/>
+                    <textField id="reinoField" property="reino"/>
+                    <textField id="telefonoField" property="telefono"/>
+                </column>
+            </form>
+        </scrollBox>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

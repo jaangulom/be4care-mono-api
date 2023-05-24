@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://jmix.io/schema/ui/menu">
+
+    <menu id="application" caption="msg://com.be4tech.b4caremonoapi/menu.application" insertBefore="administration">
+        <item screen="User.browse" caption="msg://com.be4tech.b4caremonoapi.screen.user/UserBrowse.caption"/>
+        <item screen="themeSettingsScreen" caption="msg://io.jmix.ui.app.themesettings/themeSettings.caption"/>
+        <item screen="TipoLaboratorio.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.tipolaboratorio/tipoLaboratorioBrowse.menu"/>
+        <item screen="DiagnosticoEspecifico.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.diagnosticoespecifico/tipoLaboratorioBrowse.menu"/>
+        <item screen="IndiceFuncional.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.indicefuncional/tipoLaboratorioBrowse.menu"/>
+        <item screen="EstilosVida.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.estilosvida/tipoLaboratorioBrowse.menu"/>
+        <item screen="AntecedentesGinecologico.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.antecedentesginecologico/tipoLaboratorioBrowse.menu"/>
+        <item screen="Antecedente.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.antecedente/tipoLaboratorioBrowse.menu"/>
+        <item screen="HistorialVacuna.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.historialvacuna/tipoLaboratorioBrowse.menu"/>
+        <item screen="Triage.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.triage/tipoLaboratorioBrowse.menu"/>
+        <item screen="FrecuenciaCardiaca.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.frecuenciacardiaca/tipoLaboratorioBrowse.menu"/>
+        <item screen="EstandarPregunta.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.estandarpregunta/tipoLaboratorioBrowse.menu"/>
+        <item screen="Oximetria.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.oximetria/tipoLaboratorioBrowse.menu"/>
+        <item screen="Peso.browse" caption="msg://com.be4tech.b4caremonoapi.screen.peso/tipoLaboratorioBrowse.menu"/>
+        <item screen="CompleTerapeutica.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.completerapeutica/tipoLaboratorioBrowse.menu"/>
+        <item screen="DiagnosticoHist.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.diagnosticohist/tipoLaboratorioBrowse.menu"/>
+        <item screen="DosisVacuna.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.dosisvacuna/tipoLaboratorioBrowse.menu"/>
+        <item screen="TipoVariable.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.tipovariable/tipoLaboratorioBrowse.menu"/>
+        <item screen="Ip.browse" caption="msg://com.be4tech.b4caremonoapi.screen.ip/tipoLaboratorioBrowse.menu"/>
+        <item screen="TokenDisp.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.tokendisp/tipoLaboratorioBrowse.menu"/>
+        <item screen="Vacuna.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.vacuna/tipoLaboratorioBrowse.menu"/>
+        <item screen="Encargado.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.encargado/tipoLaboratorioBrowse.menu"/>
+        <item screen="EstandarSeguimiento.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.estandarseguimiento/tipoLaboratorioBrowse.menu"/>
+        <item screen="EstandarSolicitude.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.estandarsolicitude/tipoLaboratorioBrowse.menu"/>
+        <item screen="CompleTeraPaciente.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.completerapaciente/tipoLaboratorioBrowse.menu"/>
+        <item screen="Enfermedad.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.enfermedad/tipoLaboratorioBrowse.menu"/>
+        <item screen="GrupoPoblacional.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.grupopoblacional/tipoLaboratorioBrowse.menu"/>
+        <item screen="Coordenada.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.coordenada/tipoLaboratorioBrowse.menu"/>
+        <item screen="Componente.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.componente/tipoLaboratorioBrowse.menu"/>
+        <item screen="Dispositivo.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.dispositivo/tipoLaboratorioBrowse.menu"/>
+        <item screen="DatosExtraPaciente.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.datosextrapaciente/tipoLaboratorioBrowse.menu"/>
+        <item screen="Medicamento.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.medicamento/tipoLaboratorioBrowse.menu"/>
+        <item screen="Temperatura.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.temperatura/tipoLaboratorioBrowse.menu"/>
+        <item screen="SeguiPaciDisp.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.seguipacidisp/tipoLaboratorioBrowse.menu"/>
+        <item screen="Paso.browse" caption="msg://com.be4tech.b4caremonoapi.screen.paso/tipoLaboratorioBrowse.menu"/>
+        <item screen="TratamientoMedicamento.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.tratamientomedicamento/tipoLaboratorioBrowse.menu"/>
+        <item screen="Glucosa.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.glucosa/tipoLaboratorioBrowse.menu"/>
+        <item screen="Categoria.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.categoria/tipoLaboratorioBrowse.menu"/>
+        <item screen="Condicion.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.condicion/tipoLaboratorioBrowse.menu"/>
+        <item screen="ResultadoLab.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.resultadolab/tipoLaboratorioBrowse.menu"/>
+        <item screen="SeguimientoHistorialAlarma.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.seguimientohistorialalarma/tipoLaboratorioBrowse.menu"/>
+        <item screen="Diagnostico.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.diagnostico/tipoLaboratorioBrowse.menu"/>
+        <item screen="PacienteCuidador.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.pacientecuidador/tipoLaboratorioBrowse.menu"/>
+        <item screen="JhiAuthority.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.jhiauthority/tipoLaboratorioBrowse.menu"/>
+        <item screen="Ingesta.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.ingesta/tipoLaboratorioBrowse.menu"/>
+        <item screen="Grupo.browse" caption="msg://com.be4tech.b4caremonoapi.screen.grupo/tipoLaboratorioBrowse.menu"/>
+        <item screen="Adherencia.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.adherencia/tipoLaboratorioBrowse.menu"/>
+        <item screen="DispositivoMed.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.dispositivomed/tipoLaboratorioBrowse.menu"/>
+        <item screen="PresionSanguinea.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.presionsanguinea/tipoLaboratorioBrowse.menu"/>
+        <item screen="ArchivosPaciente.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.archivospaciente/tipoLaboratorioBrowse.menu"/>
+        <item screen="EstandarAlarma.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.estandaralarma/tipoLaboratorioBrowse.menu"/>
+        <item screen="TipoPoblacion.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.tipopoblacion/tipoLaboratorioBrowse.menu"/>
+        <item screen="Alarma.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.alarma/tipoLaboratorioBrowse.menu"/>
+        <item screen="AreaEncargado.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.areaencargado/tipoLaboratorioBrowse.menu"/>
+        <item screen="HistoriaClinica.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.historiaclinica/tipoLaboratorioBrowse.menu"/>
+        <item screen="TipoVacuna.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.tipovacuna/tipoLaboratorioBrowse.menu"/>
+        <item screen="Area.browse" caption="msg://com.be4tech.b4caremonoapi.screen.area/tipoLaboratorioBrowse.menu"/>
+        <item screen="Encuesta.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.encuesta/tipoLaboratorioBrowse.menu"/>
+        <item screen="FrecuenciaRespiratoria.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.frecuenciarespiratoria/tipoLaboratorioBrowse.menu"/>
+        <item screen="Fisiometria1.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.fisiometria1/tipoLaboratorioBrowse.menu"/>
+        <item screen="InformacionExtra.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.informacionextra/tipoLaboratorioBrowse.menu"/>
+        <item screen="Tratamiento.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.tratamiento/tipoLaboratorioBrowse.menu"/>
+        <item screen="AsignacionGrupo.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.asignaciongrupo/tipoLaboratorioBrowse.menu"/>
+        <item screen="DiagnosticoGeneral.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.diagnosticogeneral/tipoLaboratorioBrowse.menu"/>
+        <item screen="Caloria.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.caloria/tipoLaboratorioBrowse.menu"/>
+        <item screen="Empresa.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.empresa/tipoLaboratorioBrowse.menu"/>
+        <item screen="ExamenFisico.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.examenfisico/tipoLaboratorioBrowse.menu"/>
+        <item screen="SegimientoDisp.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.segimientodisp/tipoLaboratorioBrowse.menu"/>
+        <item screen="ConfigAdicionalVar.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.configadicionalvar/tipoLaboratorioBrowse.menu"/>
+        <item screen="Rol.browse" caption="msg://com.be4tech.b4caremonoapi.screen.rol/tipoLaboratorioBrowse.menu"/>
+        <item screen="Solicitude.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.solicitude/tipoLaboratorioBrowse.menu"/>
+        <item screen="Sueno.browse" caption="msg://com.be4tech.b4caremonoapi.screen.sueno/tipoLaboratorioBrowse.menu"/>
+        <item screen="Paciente.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.paciente/tipoLaboratorioBrowse.menu"/>
+        <item screen="AgendaExtra.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.agendaextra/tipoLaboratorioBrowse.menu"/>
+        <item screen="Cup.browse" caption="msg://com.be4tech.b4caremonoapi.screen.cup/tipoLaboratorioBrowse.menu"/>
+        <item screen="Escala.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.escala/tipoLaboratorioBrowse.menu"/>
+        <item screen="Responsable.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.responsable/tipoLaboratorioBrowse.menu"/>
+        <item screen="Acompanante.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.acompanante/tipoLaboratorioBrowse.menu"/>
+        <item screen="Notificacion.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.notificacion/tipoLaboratorioBrowse.menu"/>
+        <item screen="Cuidador.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.cuidador/tipoLaboratorioBrowse.menu"/>
+        <item screen="Recurso.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.recurso/tipoLaboratorioBrowse.menu"/>
+        <item screen="JhiUser.browse"
+              caption="msg://com.be4tech.b4caremonoapi.screen.jhiuser/tipoLaboratorioBrowse.menu"/>
+    </menu>
+
+</menu-config>

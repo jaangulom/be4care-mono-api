@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        xmlns:c="http://jmix.io/schema/ui/jpql-condition"
+        caption="msg://tipoLaboratorioBrowse.caption"
+        focusComponent="examenFisicoesTable">
+    <data readOnly="true">
+        <collection id="examenFisicoesDc"
+                    class="com.be4tech.b4caremonoapi.entity.ExamenFisico">
+            <fetchPlan extends="_base"/>
+            <loader id="examenFisicoesDl">
+                <query>
+                    <![CDATA[select e from ExamenFisico e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="lookupSelectAction"
+                caption="msg:///actions.Select"
+                icon="LOOKUP_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="lookupCancelAction"
+                caption="msg:///actions.Cancel"
+                icon="LOOKUP_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="examenFisicoesTable" spacing="true">
+        <filter id="filter"
+                dataLoader="examenFisicoesDl">
+            <properties include=".*"/>
+        </filter>
+        <table id="examenFisicoesTable"
+               width="100%"
+               dataContainer="examenFisicoesDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="cabezaCuello"/>
+                <column id="empresa"/>
+                <column id="gClasificacionGlucome"/>
+                <column id="gPospandrial"/>
+                <column id="gPreprandial"/>
+                <column id="genitourinario"/>
+                <column id="gglucometria"/>
+                <column id="mAClasificacion"/>
+                <column id="mAPerimeAbdominal"/>
+                <column id="mAPeso"/>
+                <column id="mAindiMasaCopo"/>
+                <column id="mAtalla"/>
+                <column id="neurologicos"/>
+                <column id="oClasificacionConO"/>
+                <column id="oClasificacionSinO"/>
+                <column id="oSaturaConO"/>
+                <column id="oSaturaSinO"/>
+                <column id="osteomuscular"/>
+                <column id="pAClasificacionPa"/>
+                <column id="pADiastolica"/>
+                <column id="pAMedia"/>
+                <column id="pAPosicionToma"/>
+                <column id="pASistolica"/>
+                <column id="pASitioToma"/>
+                <column id="pielAnexos"/>
+                <column id="sVClasifiFreCar"/>
+                <column id="sVClasifiFreRes"/>
+                <column id="sVFrecuenciaCardia"/>
+                <column id="sVFrecuenciaRespi"/>
+                <column id="tClasificacionTemp"/>
+                <column id="tSitioTemp"/>
+                <column id="tTemperatura"/>
+                <column id="timeInstant"/>
+                <column id="torax"/>
+                <column id="updateIntant"/>
+                <column id="vascularPeriferico"/>
+            </columns>
+            <simplePagination/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="examenFisicoesTable.create"/>
+                <button id="editBtn" action="examenFisicoesTable.edit"/>
+                <button id="removeBtn" action="examenFisicoesTable.remove"/>
+            </buttonsPanel>
+        </table>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

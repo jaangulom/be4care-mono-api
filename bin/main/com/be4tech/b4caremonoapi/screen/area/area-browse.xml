@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        xmlns:c="http://jmix.io/schema/ui/jpql-condition"
+        caption="msg://tipoLaboratorioBrowse.caption"
+        focusComponent="areasTable">
+    <data readOnly="true">
+        <collection id="areasDc"
+                    class="com.be4tech.b4caremonoapi.entity.Area">
+            <fetchPlan extends="_base">
+                <property name="ips" fetchPlan="_instance_name"/>
+            </fetchPlan>
+            <loader id="areasDl">
+                <query>
+                    <![CDATA[select e from Area e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="lookupSelectAction"
+                caption="msg:///actions.Select"
+                icon="LOOKUP_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="lookupCancelAction"
+                caption="msg:///actions.Cancel"
+                icon="LOOKUP_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="areasTable" spacing="true">
+        <filter id="filter"
+                dataLoader="areasDl">
+            <properties include=".*"/>
+        </filter>
+        <table id="areasTable"
+               width="100%"
+               dataContainer="areasDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="correoArea"/>
+                <column id="descripcionArea"/>
+                <column id="empresa"/>
+                <column id="estadoArea"/>
+                <column id="ips"/>
+                <column id="nivelComplejidad"/>
+                <column id="nombreArea"/>
+                <column id="telefonoArea"/>
+            </columns>
+            <simplePagination/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="areasTable.create"/>
+                <button id="editBtn" action="areasTable.edit"/>
+                <button id="removeBtn" action="areasTable.remove"/>
+            </buttonsPanel>
+        </table>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

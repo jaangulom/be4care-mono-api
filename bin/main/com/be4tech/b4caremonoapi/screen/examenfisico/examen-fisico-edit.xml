@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        caption="msg://tipoLaboratorioEdit.caption"
+        focusComponent="form">
+    <data>
+        <instance id="examenFisicoDc"
+                  class="com.be4tech.b4caremonoapi.entity.ExamenFisico">
+            <fetchPlan extends="_base"/>
+            <loader/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="windowCommitAndClose" caption="msg:///actions.Ok"
+                icon="EDITOR_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="windowClose"
+                caption="msg:///actions.Close"
+                icon="EDITOR_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true" expand="scrollBox">
+        <scrollBox id="scrollBox" spacing="true">
+            <form id="form" dataContainer="examenFisicoDc">
+                <column width="350px">
+                    <textArea id="cabezaCuelloField" property="cabezaCuello" rows="5"/>
+                    <textField id="empresaField" property="empresa"/>
+                    <textField id="gClasificacionGlucomeField" property="gClasificacionGlucome"/>
+                    <checkBox id="gPospandrialField" property="gPospandrial"/>
+                    <checkBox id="gPreprandialField" property="gPreprandial"/>
+                    <textArea id="genitourinarioField" property="genitourinario" rows="5"/>
+                    <textField id="gglucometriaField" property="gglucometria"/>
+                    <textField id="mAClasificacionField" property="mAClasificacion"/>
+                    <textField id="mAPerimeAbdominalField" property="mAPerimeAbdominal"/>
+                    <textField id="mAPesoField" property="mAPeso"/>
+                    <textField id="mAindiMasaCopoField" property="mAindiMasaCopo"/>
+                    <textField id="mAtallaField" property="mAtalla"/>
+                    <textArea id="neurologicosField" property="neurologicos" rows="5"/>
+                    <textField id="oClasificacionConOField" property="oClasificacionConO"/>
+                    <textField id="oClasificacionSinOField" property="oClasificacionSinO"/>
+                    <textField id="oSaturaConOField" property="oSaturaConO"/>
+                    <textField id="oSaturaSinOField" property="oSaturaSinO"/>
+                    <textArea id="osteomuscularField" property="osteomuscular" rows="5"/>
+                    <textField id="pAClasificacionPaField" property="pAClasificacionPa"/>
+                    <textField id="pADiastolicaField" property="pADiastolica"/>
+                    <textField id="pAMediaField" property="pAMedia"/>
+                    <textField id="pAPosicionTomaField" property="pAPosicionToma"/>
+                    <textField id="pASistolicaField" property="pASistolica"/>
+                    <textField id="pASitioTomaField" property="pASitioToma"/>
+                    <textArea id="pielAnexosField" property="pielAnexos" rows="5"/>
+                    <textField id="sVClasifiFreCarField" property="sVClasifiFreCar"/>
+                    <textField id="sVClasifiFreResField" property="sVClasifiFreRes"/>
+                    <textField id="sVFrecuenciaCardiaField" property="sVFrecuenciaCardia"/>
+                    <textField id="sVFrecuenciaRespiField" property="sVFrecuenciaRespi"/>
+                    <textField id="tClasificacionTempField" property="tClasificacionTemp"/>
+                    <textField id="tSitioTempField" property="tSitioTemp"/>
+                    <textField id="tTemperaturaField" property="tTemperatura"/>
+                    <dateField id="timeInstantField" property="timeInstant"/>
+                    <textArea id="toraxField" property="torax" rows="5"/>
+                    <dateField id="updateIntantField" property="updateIntant"/>
+                    <textArea id="vascularPerifericoField" property="vascularPeriferico" rows="5"/>
+                </column>
+            </form>
+        </scrollBox>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

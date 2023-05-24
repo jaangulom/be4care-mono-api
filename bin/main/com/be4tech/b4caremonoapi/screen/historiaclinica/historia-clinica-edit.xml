@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        caption="msg://tipoLaboratorioEdit.caption"
+        focusComponent="form">
+    <data>
+        <instance id="historiaClinicaDc"
+                  class="com.be4tech.b4caremonoapi.entity.HistoriaClinica">
+            <fetchPlan extends="_base">
+                <property name="acompanan"/>
+                <property name="compleTeraPaciente" fetchPlan="_instance_name"/>
+                <property name="cups"/>
+                <property name="diagnostico" fetchPlan="_instance_name"/>
+                <property name="examenFisico"/>
+                <property name="paciente"/>
+            </fetchPlan>
+            <loader/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="windowCommitAndClose" caption="msg:///actions.Ok"
+                icon="EDITOR_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="windowClose"
+                caption="msg:///actions.Close"
+                icon="EDITOR_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true" expand="scrollBox">
+        <scrollBox id="scrollBox" spacing="true">
+            <form id="form" dataContainer="historiaClinicaDc">
+                <column width="350px">
+                    <entityPicker id="acompananField" property="acompanan">
+                        <actions>
+                            <action id="entityLookup" type="entity_lookup"/>
+                            <action id="entityClear" type="entity_clear"/>
+                        </actions>
+                    </entityPicker>
+                    <textField id="acompananteField" property="acompanante"/>
+                    <textField id="antecedentesFamilField" property="antecedentesFamil"/>
+                    <textArea id="causaExternaField" property="causaExterna" rows="5"/>
+                    <textArea id="centroAtencionField" property="centroAtencion" rows="5"/>
+                    <entityPicker id="compleTeraPacienteField" property="compleTeraPaciente">
+                        <actions>
+                            <action id="entityLookup" type="entity_lookup"/>
+                            <action id="entityClear" type="entity_clear"/>
+                        </actions>
+                    </entityPicker>
+                    <entityPicker id="cupsField" property="cups">
+                        <actions>
+                            <action id="entityLookup" type="entity_lookup"/>
+                            <action id="entityClear" type="entity_clear"/>
+                        </actions>
+                    </entityPicker>
+                    <entityPicker id="diagnosticoField" property="diagnostico">
+                        <actions>
+                            <action id="entityLookup" type="entity_lookup"/>
+                            <action id="entityClear" type="entity_clear"/>
+                        </actions>
+                    </entityPicker>
+                    <textField id="empresaField" property="empresa"/>
+                    <textField id="encargadoField" property="encargado"/>
+                    <textArea id="enfermedadActualField" property="enfermedadActual" rows="5"/>
+                    <textArea id="estadoField" property="estado" rows="5"/>
+                    <textField id="examenClinicoField" property="examenClinico"/>
+                    <entityPicker id="examenFisicoField" property="examenFisico">
+                        <actions>
+                            <action id="entityLookup" type="entity_lookup"/>
+                            <action id="entityClear" type="entity_clear"/>
+                        </actions>
+                    </entityPicker>
+                    <dateField id="fechaActualizacionField" property="fechaActualizacion"/>
+                    <dateField id="fechaInicialField" property="fechaInicial"/>
+                    <textArea id="finalidadConsulField" property="finalidadConsul" rows="5"/>
+                    <textField id="historialEnfermedadesField" property="historialEnfermedades"/>
+                    <textField id="infiltracionesField" property="infiltraciones"/>
+                    <textField id="ipsField" property="ips"/>
+                    <textField id="movitoConsultaField" property="movitoConsulta"/>
+                    <textArea id="notasAnalisisPlanField" property="notasAnalisisPlan" rows="5"/>
+                    <textArea id="notasExpecMetasField" property="notasExpecMetas" rows="5"/>
+                    <entityPicker id="pacienteField" property="paciente">
+                        <actions>
+                            <action id="entityLookup" type="entity_lookup"/>
+                            <action id="entityClear" type="entity_clear"/>
+                        </actions>
+                    </entityPicker>
+                    <textArea id="planField" property="plan" rows="5"/>
+                    <textField id="razonSocialField" property="razonSocial"/>
+                    <textArea id="tipoAtencionField" property="tipoAtencion" rows="5"/>
+                    <textField id="tipoVisitaField" property="tipoVisita"/>
+                    <textField id="tratamientoPrescritoField" property="tratamientoPrescrito"/>
+                </column>
+            </form>
+        </scrollBox>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

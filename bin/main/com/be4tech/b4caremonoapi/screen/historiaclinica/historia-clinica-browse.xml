@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        xmlns:c="http://jmix.io/schema/ui/jpql-condition"
+        caption="msg://tipoLaboratorioBrowse.caption"
+        focusComponent="historiaClinicasTable">
+    <data readOnly="true">
+        <collection id="historiaClinicasDc"
+                    class="com.be4tech.b4caremonoapi.entity.HistoriaClinica">
+            <fetchPlan extends="_base">
+                <property name="acompanan"/>
+                <property name="compleTeraPaciente" fetchPlan="_instance_name"/>
+                <property name="cups"/>
+                <property name="diagnostico" fetchPlan="_instance_name"/>
+                <property name="examenFisico"/>
+                <property name="paciente"/>
+            </fetchPlan>
+            <loader id="historiaClinicasDl">
+                <query>
+                    <![CDATA[select e from HistoriaClinica e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="lookupSelectAction"
+                caption="msg:///actions.Select"
+                icon="LOOKUP_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="lookupCancelAction"
+                caption="msg:///actions.Cancel"
+                icon="LOOKUP_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="historiaClinicasTable" spacing="true">
+        <filter id="filter"
+                dataLoader="historiaClinicasDl">
+            <properties include=".*"/>
+        </filter>
+        <table id="historiaClinicasTable"
+               width="100%"
+               dataContainer="historiaClinicasDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="acompanan"/>
+                <column id="acompanante"/>
+                <column id="antecedentesFamil"/>
+                <column id="causaExterna"/>
+                <column id="centroAtencion"/>
+                <column id="compleTeraPaciente"/>
+                <column id="cups"/>
+                <column id="diagnostico"/>
+                <column id="empresa"/>
+                <column id="encargado"/>
+                <column id="enfermedadActual"/>
+                <column id="estado"/>
+                <column id="examenClinico"/>
+                <column id="examenFisico"/>
+                <column id="fechaActualizacion"/>
+                <column id="fechaInicial"/>
+                <column id="finalidadConsul"/>
+                <column id="historialEnfermedades"/>
+                <column id="infiltraciones"/>
+                <column id="ips"/>
+                <column id="movitoConsulta"/>
+                <column id="notasAnalisisPlan"/>
+                <column id="notasExpecMetas"/>
+                <column id="paciente"/>
+                <column id="plan"/>
+                <column id="razonSocial"/>
+                <column id="tipoAtencion"/>
+                <column id="tipoVisita"/>
+                <column id="tratamientoPrescrito"/>
+            </columns>
+            <simplePagination/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="historiaClinicasTable.create"/>
+                <button id="editBtn" action="historiaClinicasTable.edit"/>
+                <button id="removeBtn" action="historiaClinicasTable.remove"/>
+            </buttonsPanel>
+        </table>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>
